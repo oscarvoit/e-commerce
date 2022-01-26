@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
     borderTop: `1px solid ${theme.palette.divider}`,
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(6),
-    marginTop: theme.spacing(8),
     [theme.breakpoints.up('sm')]: {
       paddingBottom: theme.spacing(6),
       paddingTop: theme.spacing(6),
