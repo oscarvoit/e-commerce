@@ -48,7 +48,7 @@ const Home = () => {
         </Paper>
       </Container>
 
-      <Container mxWidth="md" className={classes.cardGrid}>
+      <Container mxWidth="lg" className={classes.cardGrid}>
       <Typography component="h2" variant="h4" align="center" color="textPrimary">
           Destaques
         </Typography>
