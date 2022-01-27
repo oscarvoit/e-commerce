@@ -66,7 +66,6 @@ export default function ButtonAppBar() {
               onClose={() => setAnchorUserMenu(null)}
               anchorOrigin={{
                 vertical: 'bottom',
-                //horizontal
               }}
             >
               <Link href="/user/dashboard" passHref>
