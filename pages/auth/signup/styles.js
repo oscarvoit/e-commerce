@@ -2,7 +2,8 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
-    paddingBottom: theme.spacing(3), 
+    paddingBottom: theme.spacing(3),
+    marginTop: theme.spacing(3), 
   },
   box: {
     background: theme.palette.background.white,
@@ -12,6 +13,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     color: theme.palette.primary.main,
   },
+  formControl: {
+    marginBottom: theme.spacing(1),
+  },
+  submit: {
+    marginTop: theme.spacing(3),
+  }
 }))
 
 export default useStyles
