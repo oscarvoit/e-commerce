@@ -18,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     marginTop: theme.spacing(3),
+  },
+  loading: {
+    display: 'block',
+    margin: '10px auto',
+
   }
 }))
 
