@@ -23,7 +23,7 @@ export default NextAuth({
         if (user) {
           return user
         } else {
-          return callback('/auth/signin?i=1')
+          throw '/auth/signin?i=1'
         }
       }
     })
