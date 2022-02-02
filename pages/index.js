@@ -28,7 +28,7 @@ const Home = () => {
   const classes = useStyles()
   return(
     <TemplateDefault>
-      <Container mxWidth="md">
+      <Container maxWidth="md">
         <Typography component="h1" variant="h3" align="center" color="textPrimary">
           O que deseja encontrar?
         </Typography>
@@ -43,7 +43,7 @@ const Home = () => {
         </Paper>
       </Container>
 
-      <Container mxWidth="lg" className={classes.cardGrid}>
+      <Container maxWidth="lg" className={classes.cardGrid}>
       <Typography component="h2" variant="h4" align="center" color="textPrimary">
           Destaques
         </Typography>

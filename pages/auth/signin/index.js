@@ -1,6 +1,7 @@
 import { Formik } from 'formik'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { signIn, useSession } from 'next-auth/react'
 
 import {
   Box,
@@ -18,14 +19,22 @@ import TemplateDefault from '../../../src/templates/Default'
 import useToasty from '../../../src/contexts/Toasty'
 import useStyles from './styles'
 import { initialValues, validationSchema } from './formValues'
+import { Alert } from '@material-ui/lab'
 
-const Signup = () => {
+const Signin = () => {
   const classes = useStyles()
   const router = useRouter()
   const { setToasty } = useToasty()
+  const session = useSession()
+
+  console.log(session, router.query.i)
 
   const handleFormSubmit = async values => {
-    
+    signIn('credentials', {
+      email: values.email,
+      password: values.password,
+      callbackUrl: 'http://localhost:3000/user/dashboard',
+    })
   }
 
   return(
@@ -54,6 +63,15 @@ const Signup = () => {
               }) => {
                 return(
                   <form onSubmit={handleSubmit}>
+                    {
+                      router.query.i === '1'
+                        ? (
+                          <Alert severity="error" className={classes.errorMessage}>
+                            Usuário ou senha inválidos
+                          </Alert>
+                        )
+                        : null
+                    }
         
                     <FormControl error={errors.email && touched.email} fullWidth className={classes.formControl}>
                       <InputLabel className={classes.inputLabel}>E-mail</InputLabel>
@@ -95,19 +113,16 @@ const Signup = () => {
                           className={classes.submit}
                        
                           >
-                            Cadastrar
+                            Entrar
                           </Button>
                           )
                     }
-                   
-
+                
                   </form>
                 )
               }
             }
 
-
-            
           </Formik>
         </Box>
       </Container>
@@ -115,4 +130,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Signin
