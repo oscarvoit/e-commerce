@@ -25,6 +25,20 @@ const useStyles = makeStyles((theme) => ({
   },
   errorMessage: {
     margin: '20px 0',
+  },
+  orSeparator: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e8e8e8',
+    widht: '100%',
+    height: 1,
+    margin: theme.spacing(7, 0, 4),
+
+      '& span': {
+        backgroundColor: '#FFFFFF',
+        padding: '0 30px',
+      }
   }
 }))
 
