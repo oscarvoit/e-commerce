@@ -26,9 +26,9 @@ const Signin = ({ APP_URL }) => {
   const classes = useStyles()
   const router = useRouter()
   const { setToasty } = useToasty()
-  const session = useSession()
+  const { data: session, status } = useSession()
 
-  console.log(session, router.query.i)
+  console.log(session, status, router.query.i)
 
   const handleFormSubmit = async values => {
     signIn('credentials', {
