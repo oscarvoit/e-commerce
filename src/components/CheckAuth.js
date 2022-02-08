@@ -3,20 +3,21 @@ import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 
 const  CheckAuth = ({ Component, pageProps }) => {
-  const { data: session, loading } = useSession()
-    const router = useRouter()
+  const { data: session, status } = useSession({required: true})
+  const router = useRouter()
+  const isUser = !!session?.user
 
-    useEffect(() => {
-        if (loading) return
+  useEffect(() => {
+    if (status === 'loading') return
 
-        if (!session){
-          router.push('/auth/signin')
-        }
-    }, [session, loading])
-
-    if (session){
-      return <Component {...pageProps} />
+    if (!isUser){
+      router.push('/auth/signin')
     }
+  }, [isUser, status])
+
+  if (isUser){
+    return <Component {...pageProps} />
+  }
   
   return 'Carregando...'
 }
