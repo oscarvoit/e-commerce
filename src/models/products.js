@@ -35,4 +35,4 @@ const schema = new mongoose.Schema({
   },
 })
 
-export default mongoose.models.users || mongoose.model('products', schema)
+export default mongoose.models.products || mongoose.model('products', schema) // Se já tiver o model no db ele retorna o model, senão ele cria e retorna

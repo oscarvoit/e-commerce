@@ -30,11 +30,27 @@ export default NextAuth({
   ],
 
   session: {
-    jwt: true,
+    strategy: 'jwt',
   },
 
   jwt: {
     secret: process.env.JWT_TOKEN,
+  },
+
+  callbacks: {
+    async jwt ({token, account}) {
+      if(account){
+        token.accessToken = account.access_token
+        //token.userId = user.id
+      }
+      return Promise.resolve(token)
+    },
+
+    async session({session, token, user}) {
+      //session.accessToken = token.accessToken
+      session.userId = token.accessToken
+      return session
+    }
   },
 
   database: process.env.MONGODB_URI,

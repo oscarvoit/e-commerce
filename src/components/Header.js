@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { useSession, signOut } from 'next-auth/react'
 
-
 import { makeStyles } from '@material-ui/core/styles'
 import {
   AppBar,
