@@ -81,7 +81,7 @@ export default function ButtonAppBar() {
               <Link href="/user/dashboard" passHref>
                 <MenuItem>Meus Anúncios</MenuItem>
               </Link>
-              <Link href="user/publish" passHref>
+              <Link href="/user/publish" passHref>
                 <MenuItem>Publicar novo anúncio</MenuItem>
               </Link>
               <Divider className={classes.divider} />
