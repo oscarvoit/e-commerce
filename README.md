@@ -10,7 +10,8 @@ O projeto foi realizado em [Next.js](https://nextjs.org/), sendo usado [Material
 
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](https://github.com/oscarvoit/e-commerce/blob/main/public/images/E-commerce1.gif)
+![App Screenshot](https://github.com/oscarvoit/e-commerce/blob/main/public/images/E-commerce2.gif)
 
 
 ## Instalação
