@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+import Link from 'next/link'
 
 import {
   Button,
@@ -10,7 +11,6 @@ import {
   DialogContentText,
   DialogTitle,
   Grid,
-  Link,
   Typography,
 } from '@material-ui/core'
 
@@ -154,7 +154,9 @@ export async function getServerSideProps({ req }) {
   await dbConnect()
 
   const products = await ProductsModel.find({ 'user.id': session.userId })
-
+  
+  console.log(session.userId)
+  
   return {
     props: {
       products: JSON.parse(JSON.stringify(products)),

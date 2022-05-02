@@ -46,9 +46,11 @@ export default function ButtonAppBar() {
       <AppBar position="static" elevation={3}>
         <Container maxWidth="lg">
           <Toolbar>
-            <Typography variant="h6" component="div" className={classes.title}>
-              E-Commerce
-            </Typography>
+            <Link href="/" passHref>
+              <Typography variant="h6" component="div" className={classes.title}>
+                E-Commerce
+              </Typography>
+            </Link>
             <Link href={session ? '/user/publish' : '/auth/signin'} passHref>
               <Button color="inherit" variant="outlined" className={classes.headButton}>
                 Anunciar e Vender
